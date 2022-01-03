@@ -26,6 +26,7 @@ class Grid {
 
         node.addEventListener('click', () => {
             node.classList.toggle('active');
+            sendRequest(this.toMatrix());
         })
 
         this.container.appendChild(node);
@@ -33,12 +34,14 @@ class Grid {
 
     toMatrix() {
         let matrix = [];
-        for (let x = 0; x < this.rows; x++) {
-            matrix[x] = [];
-        }
+        // for (let x = 0; x < this.rows; x++) {
+        //     matrix[x] = [];
+        // }
 
         [...this.container.children].forEach(child => {
-            matrix[child.getAttribute('column')][child.getAttribute('row')] = (child.classList.contains('active') ? 1 : 0);
+
+            matrix.push((child.classList.contains('active') ? 1 : -1));
+            // matrix[child.getAttribute('column')][child.getAttribute('row')] = (child.classList.contains('active') ? 1 : -1);
         })
 
         return matrix;

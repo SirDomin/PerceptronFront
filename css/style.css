@@ -64,3 +64,25 @@
 .matrix_element.active {
     background: red;
 }
+
+.answers {
+    width: 20em;
+    height: 2em;
+    border: solid 1px black;
+    margin: 10px auto auto;
+    display: grid;
+    padding: 2px;
+    grid-template-columns: repeat(10, auto);
+}
+
+.answer_element {
+    float: left;
+    text-align: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.answer_element.active {
+    background: aqua;
+    color: black;
+}
